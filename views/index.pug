@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div(id="salesforceBanner", class="container")
+    div(class="row")
+      div(class="col-md-5")
+        img(src="img/logo-menu-eccargo.png", class="banner-image")
+      div(class="col-md-2")
+        <span class="glyphicon glyphicon-plus plus-banner" aria-hidden="true"></span>
+      div(class="col-md-5")
+        img(src="img/salesForce.png", class="banner-image")
+  div(class="button-panel")
+      div(class="container")
+        div(class="row")
+            div(class="col-md-6 button-container")
+              button(id="button-vendedores", class="graph-button") Agentes de Ventas
+            div(class="col-md-6 button-container")
+              button(id="button-ventas", class="graph-button") Ventas
+  div(class="container graph-container")
+      div(id="chart-container",class="row")
+          // svg(class="chart", width="960", height="500")
+  div(class="white-space")

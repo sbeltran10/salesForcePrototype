@@ -1,0 +1,52 @@
+#salesforceBanner{
+  text-align: center;
+  padding: 2em;
+  margin-bottom: 3em;
+}
+
+.graph-button{
+  height: 2.7em;
+  width: 80%;
+  background-color: rgb(5, 105, 149);
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+}
+
+.graph-button:hover, .graph-button:focus, .graph-button-selected{
+  box-shadow: 0px 10px 20px 2px grey;
+}
+
+.button-panel{
+  margin-bottom: 4em;
+}
+
+.button-container{
+  text-align: center;
+}
+
+.graph-container{
+  text-align: center;
+  padding-top:2em;
+  padding-bottom: 2em;
+  box-shadow: 0px 0px 25px 5px #999;
+}
+
+#chart-container{
+  height: 600px;
+}
+
+.banner-image{
+  width: 70%;
+  height: auto;
+}
+
+.plus-banner{
+  padding: 2em 0;
+  font-size: 2em;
+}
+
+.white-space{
+  height: 200px;
+}

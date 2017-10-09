@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= "SalesForce Demo"
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u",crossorigin="anonymous")
+    script( src="https://code.jquery.com/jquery-3.2.1.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa",crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js")
+    script(src="js/vendor/d3.min.js")
+    script(src="js/vendor/d3plus.min.js")
+    link(rel='stylesheet', href='css/styles.css')
+
+    script(type='text/javascript').
+      var dataObtained =!{JSON.stringify(graphData)}
+
+    script(src="js/main.js")
+  body
+    block content
