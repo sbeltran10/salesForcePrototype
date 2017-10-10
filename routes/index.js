@@ -26,28 +26,27 @@ var authTokenObtain = function (clientRes) {
     }
   })
     .then(function (response) {
-      console.log(response);
       authToken = response.data.access_token;
 
-      async.parallel([doSalesMenQueries], function (err) {
+      async.parallel([doQuery1, doQuery2], function (err) {
         clientRes.render('index',
           {
             title: 'Express',
             graphData: queryData
           });
       });
-
-
-      doSalesMenQueries();
     })
     .catch(function (error) {
-      console.log(error);
     });
 }
 
 
-var doSalesMenQueries = function (done) {
-  var queryStr = "SELECT name, AnnualRevenue from Account where AnnualRevenue > 100000000";
+var doQuery1 = function (done) {
+  //"SELECT Producto2.Servicio__c, Producto2.Tipo_de_servicio__c, (SELECT OpportunityLineItem.Quantity, OpportunityLineItem.TotalPrice From Product2.OpportunityLineItems) FROM Product2"
+  //"SELECT Quantity, TotalPrice, (SELECT Servicio__r, Tipo_de_servicio__r FROM Product2) FROM OpportunityLineItem"
+  //"SELECT Quantity, TotalPrice,PriceBookEntry.Product2.Tipo_de_servicio__c, PriceBookEntry.Product2.Servicio__c FROM OpportunityLineItem"
+  //"SELECT SUM(TotalPrice) y,PriceBookEntry.Product2.Servicio__c name FROM OpportunityLineItem Group by PriceBookEntry.Product2.Servicio__c"
+  var queryStr = "SELECT SUM(TotalPrice) total,PriceBookEntry.Product2.Servicio__c,PriceBookEntry.Product2.Tipo_de_servicio__c FROM OpportunityLineItem Group by rollup(PriceBookEntry.Product2.Tipo_de_servicio__c,PriceBookEntry.Product2.Servicio__c)";
   axios.get('https://na73.salesforce.com/services/data/v20.0/query',
     {
       params: {
@@ -64,12 +63,15 @@ var doSalesMenQueries = function (done) {
     })
     .catch(function (error) {
       console.log(error);
-      return done(err);
+      return done(error);
     });
 }
 
-var doSalesqueries = function (done) {
-  var queryStr = "SELECT Name, Owner.Name FROM Account";
+var doQuery2 = function (done) {
+  //"SELECT Producto2.Servicio__c, Producto2.Tipo_de_servicio__c, (SELECT OpportunityLineItem.Quantity, OpportunityLineItem.TotalPrice From Product2.OpportunityLineItems) FROM Product2"
+  //"SELECT Quantity, TotalPrice, (SELECT Servicio__r, Tipo_de_servicio__r FROM Product2) FROM OpportunityLineItem"
+  //"SELECT Quantity, TotalPrice,PriceBookEntry.Product2.Tipo_de_servicio__c, PriceBookEntry.Product2.Servicio__c FROM OpportunityLineItem"
+  var queryStr = "SELECT SUM(TotalPrice) y,PriceBookEntry.Product2.Tipo_de_servicio__c name FROM OpportunityLineItem Group by PriceBookEntry.Product2.Tipo_de_servicio__c";
   axios.get('https://na73.salesforce.com/services/data/v20.0/query',
     {
       params: {
@@ -81,9 +83,12 @@ var doSalesqueries = function (done) {
     })
     .then(function (response) {
       console.log(response);
+      queryData.query2 = response.data.records;
+      return done(response);
     })
     .catch(function (error) {
       console.log(error);
+      return done(error);
     });
 }
 
