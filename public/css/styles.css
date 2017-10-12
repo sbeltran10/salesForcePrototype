@@ -1,5 +1,5 @@
 body, html{
-  background-color: rgb(238,238,238)
+  background-color: #ffffff
 }
 
 #salesforceBanner{
@@ -53,7 +53,7 @@ body, html{
 }
 
 .chart-header{
-  background-color: rgb(21, 65, 132);
+  background-color: rgb(0, 136, 203);
   color:white;
   padding: 1em
 }
@@ -61,4 +61,20 @@ body, html{
 .header-title{
   font-size: 2em;
   float: left
+}
+
+.pull-right{
+  float: right
+}
+
+.periodo-title{
+  color:darkblue;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+#ind1-title{
+  font-size: 2em;
+  padding: 0.2em;
 }

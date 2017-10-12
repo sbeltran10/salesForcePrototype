@@ -4,11 +4,11 @@ block content
   div(id="salesforceBanner", class="container")
     div(class="row")
       div(class="col-md-5")
-        img(src="img/logo-menu-eccargo.png", class="banner-image")
+        img(src="img/Ecomil.png", class="banner-image")
       div(class="col-md-2")
         <span class="glyphicon glyphicon-plus plus-banner" aria-hidden="true"></span>
       div(class="col-md-5")
-        img(src="img/salesForce.png", class="banner-image")
+        img(src="img/BCOM.jpg", class="banner-image")
   div(class="button-panel")
       div(class="container")
         div(class="row")
@@ -18,18 +18,43 @@ block content
               //button(id="button-ventas", class="graph-button") Ventas
   div(class="container graph-container")
       div(class="row chart-header")
-        span(class="header-title") Porcentaje de Ventas por Tipo de Servicio
+        div(class="col-md-9")
+          span(class="header-title") Metas de Ventas por Gerentes Comerciales
+        div(class="col-md-3 drop-line")
+          include dropdown
+      div(class="line-periodo periodo-title row") Período Q1 2017
+      div(id="line-chart-container",class="row")
+  div(class="container graph-container")
+      div(class="row chart-header")
+        div(class="col-md-9")
+          span(class="header-title") Consolidado de estado de Ventas
+        div(class="col-md-3 drop-side")
+          include dropdown
+      div(class="side-periodo periodo-title row") Período Q1 2017
+      div(id="side-chart-container",class="row")
+  div(class="container graph-container")
+      div(class="row chart-header")
+        div(class="col-md-9")
+          span(class="header-title") Porcentaje de Ventas por Tipo de Servicio
+        div(class="col-md-3 drop-pie")
+          include dropdown
+      div(class="pie-periodo periodo-title row") Período Q1 2017
       div(id="pie-chart-container",class="row")
   div(class="container graph-container")
       div(class="row chart-header")
-        span(class="header-title") Ingresos de Ventas por Gerente Comercial y de Cuenta
+        div(class="col-md-9")
+          span(class="header-title") Ventas por Gerente Comercial y de Cuenta
+        div(class="col-md-3 drop-bar")
+          include dropdown
+      div(class="chart-periodo periodo-title row") Período Q1 2017
       div(id="chart-container",class="row")
   div(class="container graph-container")
       div(class="row chart-header")
-        span(class="header-title") Indicadores de Desempeño Fuerza de Ventas
-      div(class="row")
-        div(class="col-md-6")
-          div(id="ind1-container")
-        div(class="col-md-6")
-          div(id="ind2-container")
+        div(class="col-md-9")
+          span(class="header-title") Indicadores de Desempeño Fuerza de Ventas
+        div(class="col-md-3 drop-ind")
+          include dropdown
+      div(class="ind-periodo periodo-title row") Período Q1 2017
+      div(id="ind1-title",class="row") Porcentaje de Cumplimiento Global de Metas
+      div(id="ind1-container",class="row")
   div(class="white-space")
