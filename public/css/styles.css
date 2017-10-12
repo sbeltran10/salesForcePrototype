@@ -1,3 +1,7 @@
+body, html{
+  background-color: rgb(238,238,238)
+}
+
 #salesforceBanner{
   text-align: center;
   padding: 2em;
@@ -15,7 +19,7 @@
 }
 
 .graph-button:hover, .graph-button:focus, .graph-button-selected{
-  box-shadow: 0px 10px 20px 2px grey;
+  box-shadow: 0px 10px 15px 2px grey;
 }
 
 .button-panel{
@@ -27,15 +31,11 @@
 }
 
 .graph-container{
+  background-color: #ffffff;
   text-align: center;
-  padding-top:2em;
   padding-bottom: 2em;
-  box-shadow: 0px 0px 25px 5px #999;
+  box-shadow: 0px 5px 20px 1px #999;
   margin-bottom: 3em;
-}
-
-#chart-container{
-  height: 600px;
 }
 
 .banner-image{
@@ -50,4 +50,15 @@
 
 .white-space{
   height: 200px;
+}
+
+.chart-header{
+  background-color: rgb(21, 65, 132);
+  color:white;
+  padding: 1em
+}
+
+.header-title{
+  font-size: 2em;
+  float: left
 }
